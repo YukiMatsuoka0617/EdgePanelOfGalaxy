@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/left_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/right_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_size"
+            android:layout_marginBottom="@dimen/margin_size"
+            android:layout_weight="2"
+            android:background="#FFC0C0C0"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/edge_panel_padding_size"
+            android:paddingBottom="@dimen/edge_panel_padding_size">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_size"
+                android:paddingTop="@dimen/padding_size"
+                android:paddingEnd="@dimen/padding_size"
+                android:paddingBottom="@dimen/padding_size">
+
+                <include
+                    android:id="@+id/item1"
+                    layout="@layout/app_item_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/padding_size" />
+
+                <include
+                    android:id="@+id/item2"
+                    layout="@layout/app_item_layout" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_size"
+                android:paddingTop="@dimen/padding_size"
+                android:paddingEnd="@dimen/padding_size"
+                android:paddingBottom="@dimen/padding_size">
+
+                <include
+                    android:id="@+id/item3"
+                    layout="@layout/app_item_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/padding_size" />
+
+                <include
+                    android:id="@+id/item4"
+                    layout="@layout/app_item_layout" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_size"
+                android:paddingTop="@dimen/padding_size"
+                android:paddingEnd="@dimen/padding_size"
+                android:paddingBottom="@dimen/padding_size">
+
+                <include
+                    android:id="@+id/item5"
+                    layout="@layout/app_item_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/padding_size" />
+
+                <include
+                    android:id="@+id/item6"
+                    layout="@layout/app_item_layout" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_size"
+                android:paddingTop="@dimen/padding_size"
+                android:paddingEnd="@dimen/padding_size"
+                android:paddingBottom="@dimen/padding_size">
+
+                <include
+                    android:id="@+id/item7"
+                    layout="@layout/app_item_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/padding_size" />
+
+                <include
+                    android:id="@+id/item8"
+                    layout="@layout/app_item_layout" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_size"
+                android:paddingTop="@dimen/padding_size"
+                android:paddingEnd="@dimen/padding_size"
+                android:paddingBottom="@dimen/padding_size">
+
+                <include
+                    android:id="@+id/item9"
+                    layout="@layout/app_item_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/padding_size" />
+
+                <include
+                    android:id="@+id/item10"
+                    layout="@layout/app_item_layout" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
