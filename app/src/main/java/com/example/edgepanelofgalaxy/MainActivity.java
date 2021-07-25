@@ -1,6 +1,8 @@
 package com.example.edgepanelofgalaxy;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ClipData;
 import android.content.Context;
@@ -19,9 +21,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnLongClickListener {
     private LinearLayout leftLayout;
     private LinearLayout rightLayout;
-
-    int[] layoutIds = {R.id.item1,R.id.item2,R.id.item3,R.id.item4,R.id.item5,
-            R.id.item6,R.id.item7,R.id.item8,R.id.item9,R.id.item10};
 
     Context mContext;
     ArrayList<ApplicationInfo> mAllAppsListWithoutSystemApps;
@@ -43,15 +42,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         leftLayout.setOnDragListener(listener);
         rightLayout.setOnDragListener(listener);
 
-        for (int i = 0; i < layoutIds.length; i++) {
-            LinearLayout linearLayout = findViewById(layoutIds[i]);
-            linearLayout.setOnLongClickListener(this);
-            ImageView appIcon = linearLayout.findViewById(R.id.icon);
-            TextView appName = linearLayout.findViewById(R.id.app_name);
-            appIcon.setImageDrawable(mAllAppsListWithoutSystemApps.get(i).loadIcon(mPackageManager));
-            appName.setText(mAllAppsListWithoutSystemApps.get(i).loadLabel(mPackageManager));
-        }
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        RecyclerView.LayoutManager rLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(rLayoutManager);
 
+        MyAdapter adapter = new MyAdapter(this, mAllAppsListWithoutSystemApps, mPackageManager);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
